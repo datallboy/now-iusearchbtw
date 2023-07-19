@@ -8,12 +8,14 @@ import (
 
 var PUBLIC_PATH = "./public"
 var LISTENING_ADDRESS = "0.0.0.0"
+var LISTENING_PORT = "1323"
 
 type Config struct {
 	Client           *client.Client
 	Context          context.Context
 	PublicPath       string
 	ListeningAddress string
+	ListeningPort    string
 }
 
 func New() (*Config, error) {
@@ -29,5 +31,6 @@ func New() (*Config, error) {
 		Context:          ctx,
 		PublicPath:       PUBLIC_PATH,
 		ListeningAddress: LISTENING_ADDRESS,
+		ListeningPort:    LISTENING_PORT,
 	}, nil
 }

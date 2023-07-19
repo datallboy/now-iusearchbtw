@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"now-iusearchbtw/config"
 	"now-iusearchbtw/routes"
@@ -18,5 +19,7 @@ func main() {
 
 	routes.Routes(e, config)
 
-	e.Logger.Fatal(e.Start(":1323"))
+	address := fmt.Sprintf("%s:%s", config.ListeningAddress, config.ListeningPort)
+
+	e.Logger.Fatal(e.Start(address))
 }

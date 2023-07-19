@@ -8,7 +8,7 @@ import (
 )
 
 func Routes(e *echo.Echo, c *config.Config) {
-	e.Static("/", "public")
+	e.Static("/", c.PublicPath)
 	e.GET("/ping", controllers.Ping())
 	e.GET("/new", controllers.NewContainer(c))
 	e.DELETE("/kill", controllers.KillContainer(c))
